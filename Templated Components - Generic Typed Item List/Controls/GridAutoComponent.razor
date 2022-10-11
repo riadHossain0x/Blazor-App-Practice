@@ -1,37 +1,44 @@
 ﻿@using System.Reflection
 @typeparam TItem
 
-<table class="table">
-    <thead>
-        <tr>
-            @foreach (var member in members)
-            {
-                if (member.MemberType == MemberTypes.Property)
-                {
-                    <th>@member.Name</th>
-                }
-            }
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Items)
-        {
+@if (members != null && members.Length > 0)
+{
+    <table class="table">
+        <thead>
             <tr>
                 @foreach (var member in members)
                 {
-                    if(member.MemberType == MemberTypes.Property)
+                    if (member.MemberType == MemberTypes.Property &&
+                    !ColumnToExcludeCSV.Contains(member.Name, StringComparison.OrdinalIgnoreCase))
                     {
-                        <td>@item.GetType().GetProperty(member.Name)!.GetValue(item)</td>
+                        <th>@member.Name</th>
                     }
                 }
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Items)
+            {
+                <tr>
+                    @foreach (var member in members)
+                    {
+                        if (member.MemberType == MemberTypes.Property && 
+                        !ColumnToExcludeCSV.Contains(member.Name, StringComparison.OrdinalIgnoreCase))
+                        {
+                            <td>@item.GetType().GetProperty(member.Name)!.GetValue(item)</td>
+                        }
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
     [Parameter]
     public List<TItem> Items { get; set; } = null!;
+    [Parameter]
+    public string ColumnToExcludeCSV { get; set; } = null!;
 
     MemberInfo[] members = null!;
 

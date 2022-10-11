@@ -2,7 +2,7 @@
 
 <PageTitle>Index</PageTitle>
 
-<GridAutoComponent Items="Customers"></GridAutoComponent>
+<GridAutoComponent Items="Customers" ColumnToExcludeCSV="Id,Phone"></GridAutoComponent>
 
 @code{
     public List<Employee> Employees { get; set; } = null!;
