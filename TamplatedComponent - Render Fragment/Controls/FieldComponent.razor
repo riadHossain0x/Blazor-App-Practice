@@ -1,0 +1,15 @@
+﻿
+<div class="field">
+    <label class="label">@Title</label>
+    <div class="control">
+        @Control
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment Control { get; set; }
+}

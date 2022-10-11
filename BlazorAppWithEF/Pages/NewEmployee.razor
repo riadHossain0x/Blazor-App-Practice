@@ -1,0 +1,46 @@
+﻿@page "/newemployee"
+@inject AppDbContext context
+
+<h3>New Employee</h3>
+
+@if (Employees != null)
+{
+    @foreach (var empl in Employees)
+    {
+        <p>@empl.Name</p>
+    }
+}
+else{
+    <p>No employee found!</p>
+}
+
+<input class="form-control m-1" type="text" @bind-value="Name" @bind-value:event="oninput" @onkeyup="GetContains"/>
+<button class="btn btn-primary m-1" @onclick="OnSubmit">Submit</button>
+
+@code {
+    public string Name { get; set; } = null!;
+    public List<Employee> Employees { get; set; } = null!;
+
+    protected override Task OnInitializedAsync()
+    {
+        //Employees = context.Employees.ToList();
+        return base.OnInitializedAsync();
+    }
+
+    private async Task OnSubmit()
+    {
+        var employee = new Employee { Name = Name };
+        await context.Employees.AddAsync(employee);
+        await context.SaveChangesAsync();
+    }
+
+    private void GetContains()
+    {
+        if (!string.IsNullOrWhiteSpace(Name))
+        {
+            Employees = context.Employees.Where(x => x.Name.Contains(Name)).ToList();
+        }
+        else
+            Employees.Clear();
+    }
+}

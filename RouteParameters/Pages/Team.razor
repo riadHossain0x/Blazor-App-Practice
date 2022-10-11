@@ -1,0 +1,22 @@
+﻿@page "/team/{id:int}"
+@inherits TeamBaseComponent
+
+<PageTitle>Team</PageTitle>
+<h3>Team</h3>
+
+<h4>ID: @_Team.Id</h4>
+<h4>NAME: @_Team.Name</h4>
+<h4>REGION: @_Team.Region</h4>
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+    public TeamDetail _Team { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _Team = Teams.Where(x => x.Id == Id).FirstOrDefault()!;
+    }
+}

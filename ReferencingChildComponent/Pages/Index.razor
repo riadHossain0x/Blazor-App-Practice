@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<button class="button" @onclick="(()=>{child!.ShowOrHide();})">Show child component</button>
+
+<ChildComponent @ref="child"></ChildComponent>
+
+<button class="button" @onclick="(()=>{modal!.Show();})">Show modal component</button>
+
+<ModalComponent @ref="modal"></ModalComponent>
+
+@code{
+    private ChildComponent? child;
+    private ModalComponent? modal;
+}

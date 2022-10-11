@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<FieldComponent>
+    <Control>
+        <input class="input" type="text" placeholder="e.g Alex Smith" @bind-value="Name" @bind-value:event="oninput">
+    </Control>
+</FieldComponent>
+<FieldComponent>
+    <Control>
+        <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+    </Control>
+</FieldComponent>
+
+@code{
+
+    public string Name { get; set; } = null!;
+    public string Email { get; set; } = null!;
+}

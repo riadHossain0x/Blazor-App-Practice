@@ -1,0 +1,14 @@
+﻿<h3>Date Component</h3>
+@GetDateTime
+
+
+@code {
+
+    public DateTime GetDateTime { get; set; }
+
+    protected override void OnInitialized()
+    {
+        GetDateTime = DateTime.Now;
+        base.OnInitialized();
+    }
+}

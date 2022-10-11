@@ -1,0 +1,17 @@
+﻿@page "/counter"
+
+<h3>ParentComponent (Event Version)</h3>
+
+<p role="status">Current count: @currentCount</p>
+
+<Counter GetCurrentCount="SetCurrentCount"></Counter>
+
+@code {
+    private int currentCount;
+
+    public void SetCurrentCount(int value)
+    {
+        currentCount = value;
+    }
+
+}

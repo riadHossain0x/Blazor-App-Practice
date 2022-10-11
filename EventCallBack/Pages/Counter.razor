@@ -1,0 +1,23 @@
+﻿
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    [Parameter]
+    public EventCallback<int> GetCurrentCount { get; set; } // Event Version
+
+    [Parameter]
+    public Action<int> GetCount { get; set; } = null!;
+
+    private int currentCount = 0;
+
+    private async Task IncrementCount()
+    {
+        currentCount++;
+        //await GetCurrentCount.InvokeAsync(currentCount);
+        GetCount.Invoke(currentCount);
+    }
+}
