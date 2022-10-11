@@ -13,11 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RouteParameters", "RoutePar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CascadingParameters", "CascadingComponent\CascadingParameters.csproj", "{AF4C878A-3072-4360-AD00-75F7039715C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCallBack", "EventCallBack\EventCallBack.csproj", "{D329610D-154E-48BB-B6CD-EF382E037338}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCallBack", "EventCallBack\EventCallBack.csproj", "{D329610D-154E-48BB-B6CD-EF382E037338}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferencingChildComponent", "ReferencingChildComponent\ReferencingChildComponent.csproj", "{7F158E3A-86FD-47B4-AD66-B5E5A4E9DC95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReferencingChildComponent", "ReferencingChildComponent\ReferencingChildComponent.csproj", "{7F158E3A-86FD-47B4-AD66-B5E5A4E9DC95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TamplatedComponent - Render Fragment", "TamplatedComponent - Render Fragment\TamplatedComponent - Render Fragment.csproj", "{42EA17E0-CAF0-4806-B201-D2C5A42F08D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TamplatedComponent - Render Fragment", "TamplatedComponent - Render Fragment\TamplatedComponent - Render Fragment.csproj", "{42EA17E0-CAF0-4806-B201-D2C5A42F08D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templated Components - Generic Typed Item List", "Templated Components - Generic Typed Item List\Templated Components - Generic Typed Item List.csproj", "{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{42EA17E0-CAF0-4806-B201-D2C5A42F08D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42EA17E0-CAF0-4806-B201-D2C5A42F08D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42EA17E0-CAF0-4806-B201-D2C5A42F08D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

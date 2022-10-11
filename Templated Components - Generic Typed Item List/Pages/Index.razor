@@ -1,0 +1,25 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<GridAutoComponent Items="Customers"></GridAutoComponent>
+
+@code{
+    public List<Employee> Employees { get; set; } = null!;
+    public List<Customer> Customers { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        Employees = new List<Employee>{
+            new Employee{
+                Id = 1, Name = "Sabbir", Department = "OSL", Position="Assistant Software Engineer"
+            }
+        };
+
+        Customers = new List<Customer>{
+            new Customer{Id = 1, Name = "Mahedi", Phone = "010000000000", Address = "Dhaka, Bangladesh"}
+        };
+    }
+}

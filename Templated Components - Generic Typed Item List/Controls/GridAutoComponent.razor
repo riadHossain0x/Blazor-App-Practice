@@ -1,0 +1,44 @@
+﻿@using System.Reflection
+@typeparam TItem
+
+<table class="table">
+    <thead>
+        <tr>
+            @foreach (var member in members)
+            {
+                if (member.MemberType == MemberTypes.Property)
+                {
+                    <th>@member.Name</th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Items)
+        {
+            <tr>
+                @foreach (var member in members)
+                {
+                    if(member.MemberType == MemberTypes.Property)
+                    {
+                        <td>@item.GetType().GetProperty(member.Name)!.GetValue(item)</td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<TItem> Items { get; set; } = null!;
+
+    MemberInfo[] members = null!;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        var typeItem = Items[0].GetType();
+        members = typeItem.GetMembers();
+    }
+}
