@@ -6,7 +6,12 @@
     @Row(item)
 }
 
-@EditTemplate(ItemToEdit)
+@if (ItemToEdit != null)
+{
+    @EditTemplate(ItemToEdit)
+}
+
+@Footer
 
 @code {
     [Parameter]

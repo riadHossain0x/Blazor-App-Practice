@@ -6,19 +6,36 @@
 
 Welcome to your new app.
 
-<RepeaterComponent Items="Customers">
+<RepeaterComponent @ref="repeater" Items="Customers">
     <Header>
-        <h2>Repeater Component</h2>
+        <h2>Repeater Header</h2>
     </Header>
     <Row Context="customer">
         <div>@customer.Id</div>
         <div class="ml-5">@customer.Name</div>
         <div class="ml-5">@customer.Address</div>
-        <button class="btn" @onclick="()=>{}">Edit</button>
+        <button class="btn btn-primary" @onclick="@(()=>CustomerEdit(customer))">Edit</button>
     </Row>
+
+    <EditTemplate Context="currentCustomer">
+        <br />
+        <div>
+            <text>Company Name: </text><input class="form-control" @bind-value="currentCustomer.Name"/>
+        </div>
+        <div>
+            <text>Company Address: </text><input class="form-control" @bind-value="currentCustomer.Address" />
+        </div>
+        <br />
+        <input class="btn btn-primary" value="Update" @onclick="@(() => Submit(currentCustomer))" />
+    </EditTemplate>
+
+    <Footer>
+        <h2>Repeater Footer</h2>
+    </Footer>
 </RepeaterComponent>
 
 @code{
+    public RepeaterComponent<Customer> repeater { get; set; } = null!;
 
     public List<Customer> Customers { get; set; } = null!;
 
@@ -29,5 +46,15 @@ Welcome to your new app.
             new Customer{Id = 1, Name = "Sabbir", Address = "Dhaka"},
             new Customer{Id = 2, Name = "Riad", Address = "Dhaka"}
         };
+    }
+
+    public void CustomerEdit(Customer customer)
+    {
+        repeater.ItemToEdit = customer;
+    }
+
+    public void Submit(Customer customer)
+    {
+
     }
 }
