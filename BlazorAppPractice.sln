@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReferencingChildComponent",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TamplatedComponent - Render Fragment", "TamplatedComponent - Render Fragment\TamplatedComponent - Render Fragment.csproj", "{42EA17E0-CAF0-4806-B201-D2C5A42F08D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templated Components - Generic Typed Item List", "Templated Components - Generic Typed Item List\Templated Components - Generic Typed Item List.csproj", "{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Templated Components - Generic Typed Item List", "Templated Components - Generic Typed Item List\Templated Components - Generic Typed Item List.csproj", "{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templated Components - Generic Typed RenderFragment", "Templated Components - Generic Typed RenderFragment\Templated Components - Generic Typed RenderFragment.csproj", "{FAACC740-8D05-4B74-B24F-1A087D71297E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF4674CB-B50E-4B58-A4FA-6475EB48DD17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAACC740-8D05-4B74-B24F-1A087D71297E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAACC740-8D05-4B74-B24F-1A087D71297E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAACC740-8D05-4B74-B24F-1A087D71297E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAACC740-8D05-4B74-B24F-1A087D71297E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
