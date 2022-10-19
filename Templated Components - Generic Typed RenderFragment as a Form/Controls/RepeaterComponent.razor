@@ -1,0 +1,27 @@
+﻿@typeparam TItem
+
+@if(Items != null && Items.Count > 0)
+{
+    @foreach (var item in Items)
+    {
+        @Row(item)
+    }
+}
+
+@if(ItemToEdit != null)
+{
+    @EditTemplate(ItemToEdit)
+}
+
+@code {
+    [Parameter]
+    public RenderFragment<TItem> Row { get; set; } = null!;
+
+    [Parameter]
+    public List<TItem> Items { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment<TItem> EditTemplate { get; set; } = null!;
+
+    public TItem ItemToEdit { get; set; } = default(TItem)!;
+}

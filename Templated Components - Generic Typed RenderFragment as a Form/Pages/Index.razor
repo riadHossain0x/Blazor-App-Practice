@@ -1,0 +1,58 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<RepeaterComponent @ref="repeater"
+    Items="Customers">
+    <Row Context="customer">
+        <h2 class="pt-4">@customer.Id</h2>
+        <h4 class="ms-4">@customer.Name</h4>
+        <h4 class="ms-4">@customer.Description</h4>
+        <input type="button" class="btn btn-primary ms-4" value="Edit" @onclick="(() => EditCustomer(customer))" />
+    </Row>
+
+    <EditTemplate Context="customerEdit">
+        <div class="pt-5">
+            <text>Customer Id:</text><input type="text" class="form-control" @bind-value="customerEdit.Id" />
+        </div>
+        <div>
+            <text>Customer Name:</text><input type="text" class="form-control" @bind-value="customerEdit.Name" />
+        </div>
+        <div>
+            <text>Customer Description:</text><input type="text" class="form-control" @bind-value="customerEdit.Description" />
+        </div>
+        <button class="btn btn-primary" @onclick="() => Update(customerEdit)">Update</button>
+    </EditTemplate>
+</RepeaterComponent>
+
+@code
+{
+    public RepeaterComponent<Customer> repeater { get; set; } = null!;
+
+    public List<Customer> Customers { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        Customers = new List<Customer>
+        {
+            new Customer{ Id = 1, Name = "Sabbir", Description = "Null"},
+            new Customer{ Id = 2, Name = "Riad", Description = "Null"}
+        };
+    }
+
+    public void EditCustomer(Customer customer)
+    {
+        repeater.ItemToEdit = customer;
+    }
+
+    public void Update(Customer customer)
+    {
+
+    }
+}
